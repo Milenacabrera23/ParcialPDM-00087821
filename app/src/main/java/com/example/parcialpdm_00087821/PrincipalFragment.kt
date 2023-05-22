@@ -1,11 +1,13 @@
 package com.example.parcialpdm_00087821
 
 import android.os.Bundle
+import android.provider.ContactsContract.Data
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class PrincipalFragment : Fragment() {
     private lateinit var editName
@@ -15,7 +17,16 @@ class PrincipalFragment : Fragment() {
         setContentView(R.layout.fragment_principal)
         bind()
 
-        val adapterCountry =
+        val adapterCountry = CountryAdapter()
+        adapterCountry.setData(Country)
+
+        val adapterCapital = CapitalAdapter()
+        adapterCapital.setData(Country)
+
+        recyclerView.adapterCapital = adapterCapital
+        recyclerView.adapterCountry = adapterCountry
+        recycleView.layoutManager = ConstraintLayout(this)
+
     }
 
     override fun onCreateView(
