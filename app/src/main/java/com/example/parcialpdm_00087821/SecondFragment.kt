@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import org.w3c.dom.Text
 
 // TODO: Rename parameter arguments, choose names that match
@@ -13,16 +14,23 @@ private const val Button = "Listbutton"
 private const val  = "param2"
 
 class SecondFragment : Fragment() {
-    private var Button: Button? = null
-    private var editNameCountry: Text? = null
-    private var editCapitalCountry: Text? = null
+    private lateinit var Button: Button
+    private lateinit var editNameCountry: Text
+    private lateinit var editCapitalCountry: Text
+    private lateinit var textPais : TextView
+    private lateinit var textCapital : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            button = it.getString(Button)
-            NameCountry = it.getString(editNameCountry)
-        }
+        setContentView(R.layout.fragment_second)
+
+        textCapital  = findViewbyId(R.id.textCapital)
+        textPais = findViewbyId(R.id.textPais)
+
+        val intent = intent
+        val Pais = intent.getStringExtra(¨Pais¨).toString()
+        val Capital = intent.getStringExtra(¨Capital¨).toString()
+
     }
 
     override fun onCreateView(
