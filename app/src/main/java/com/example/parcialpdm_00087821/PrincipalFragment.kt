@@ -7,21 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class PrincipalFragment : Fragment() {
-    private var ButtonSecond: Button? = null
-    private var List: String? = null
+    private lateinit var editName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            button = it.getString(button)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        setContentView(R.layout.fragment_principal)
+        bind()
+
+        val adapterCountry =
     }
 
     override fun onCreateView(
